@@ -1,0 +1,62 @@
+{
+  "compilerOptions": {
+    // -----------------
+    // ENVIRONMENT SETTINGS
+    // -----------------
+    "target": "es6",                  // Compile down to ES6 for wide browser support
+    "module": "esnext",                // Use modern ES modules, let Webpack handle bundling
+
+    // -----------------
+    // FILE LAYOUT
+    // -----------------
+    "rootDir": "./src",                // Where TypeScript source files live
+    "outDir": "./dist",                // Where compiled JS/CSS output will be written
+
+    // -----------------
+    // STRICTNESS & SAFETY
+    // -----------------
+    "strict": true,                    // Enables *all* strict type-checking options
+    "esModuleInterop": true,           // Allows default imports from CommonJS modules
+    "forceConsistentCasingInFileNames": true, // Prevents case mismatches between imports and filenames
+    "moduleResolution": "node",        // Mimics Node's module resolution rules
+    "noImplicitReturns": true,         // Forces explicit return values in every function branch
+    "noFallthroughCasesInSwitch": true,// Prevents accidental fallthrough in switch statements
+    "noUnusedLocals": true,            // Warns on unused variables
+    "noUnusedParameters": true,        // Warns on unused function parameters
+
+    // -----------------
+    // DECLARATION FILES
+    // -----------------
+    "sourceMap": true,                  // Generates .map files for debugging in browser devtools
+    "declaration": true,                 // Generates .d.ts type definition files (optional for themes)
+    "declarationMap": true,              // Generates source maps for those .d.ts files
+
+    // -----------------
+    // STRICTER TYPE SAFETY
+    // -----------------
+    "noUncheckedIndexedAccess": true,   // Makes array/obj index access return T | undefined
+    "exactOptionalPropertyTypes": true, // Optional props must match exactly (no undefined unless allowed)
+
+    // -----------------
+    // RECOMMENDED OPTIONS
+    // -----------------
+    "isolatedModules": true,            // Ensures each file is treated as a separate module
+    "skipLibCheck": true                 // Skips type checking for node_modules to speed up builds
+  },
+
+  // -----------------
+  // FILE INCLUSIONS
+  // -----------------
+  "include": [
+    "src/**/*.ts"                       // Only compile TS files inside /src
+  ],
+
+  // -----------------
+  // FILE EXCLUSIONS
+  // -----------------
+  "exclude": [
+    "node_modules",                      // Never compile dependencies
+    "dist",                              // Never compile output files
+    "scripts"                            // Exclude any custom scripts (e.g. strip tsconfig)
+  ]
+}
