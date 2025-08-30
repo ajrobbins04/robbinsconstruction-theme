@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "NODE_ENV=development webpack --watch",
     "build": "NODE_ENV=production webpack",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "lint": "eslint 'src/**/*.{ts,js}'",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "Amber Robbins",
