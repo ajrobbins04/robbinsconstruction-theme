@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+   
+    // ENVIRONMENT SETTINGS
+    "target": "es6",                  
+    "module": "esnext",                
+ 
+    // FILE LAYOUT
+    "rootDir": "./src",                
+    "outDir": "./dist",                
+
+    // STRICTNESS & SAFETY
+    "strict": true,                    
+    "esModuleInterop": true,           
+    "forceConsistentCasingInFileNames": true, 
+    "moduleResolution": "node",        
+    "noImplicitReturns": true,         
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,            
+    "noUnusedParameters": true,        
+
+    // DECLARATION FILES
+    "sourceMap": true,                  
+    "declaration": true,                 
+    "declarationMap": true,              
+
+    // STRICTER TYPE SAFETY
+    "noUncheckedIndexedAccess": true,   
+    "exactOptionalPropertyTypes": true, 
+
+    // RECOMMENDED OPTIONS
+    "isolatedModules": true,            
+    "skipLibCheck": true                 
+  },
+
+  // FILE INCLUSIONS
+  "include": [
+    "src/**/*.ts"                       
+  ],
+
+  // FILE EXCLUSIONS
+  "exclude": [
+    "node_modules",                      
+    "dist",                            
+    "scripts"                            
+  ]
+}
