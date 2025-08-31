@@ -1,14 +1,13 @@
 const path = require("path"); // Helper for resolving paths
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // For extracting CSS into separate files
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin"); // For live reloading
-const CleanWebpackPlugin = require("clean-webpack-plugin"); // Wipes dist before each build
+const { CleanWebpackPlugin } = require("clean-webpack-plugin"); // Wipes dist before each build
 
 const isProduction = process.env.NODE_ENV === "production"; // Check if we're in production mode
 
 module.exports = {
     entry: {
-        main: "./src/ts/main.ts", // Entry point for TypeScript
-        style: "./src/scss/style.scss" // Entry point for SCSS
+        main: "./src/ts/main.ts" // Main entry point for the application
     },
     output: {
         filename: "[name].js", // Output file name based on entry point
@@ -44,15 +43,15 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|gif|svg|webp|woff2?|ttf|eot)$/i, // Match image and font files
                 type: "asset/resource", // Use asset module to handle these files
+                include: path.resolve(__dirname, "src/assets"),
                 generator: {
-                    filename: "assets/[path][name][ext]" // Output path for assets
+                    filename: "assets/[name][ext]" // Output path for assets
                 },
                 parser: {
                     dataUrlCondition: {
                         maxSize: 8 * 1024 // Inline files smaller than 8kb
                     }
                 },
-                include: path.resolve(__dirname, "src/assets") // Only include assets from src/assets
             }
         ]
     },
@@ -61,8 +60,7 @@ module.exports = {
     },
 
     plugins: [
-        new CleanWebpackPlugin(),
-
+        new CleanWebpackPlugin(), // Clean the dist folder before each build
         new MiniCssExtractPlugin({
             filename: "style.css", // Output CSS file name
         }),

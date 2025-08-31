@@ -1,15 +1,11 @@
 {
   "compilerOptions": {
    
-    // ENVIRONMENT SETTINGS
     "target": "es6",                  
     "module": "esnext",                
- 
-    // FILE LAYOUT
     "rootDir": "./src",                
     "outDir": "./dist",                
 
-    // STRICTNESS & SAFETY
     "strict": true,                    
     "esModuleInterop": true,           
     "forceConsistentCasingInFileNames": true, 
@@ -19,26 +15,24 @@
     "noUnusedLocals": true,            
     "noUnusedParameters": true,        
 
-    // DECLARATION FILES
-    "sourceMap": true,                  
-    "declaration": true,                 
-    "declarationMap": true,              
+    "sourceMap": true, 
 
-    // STRICTER TYPE SAFETY
+    "declaration": false,                 
+    "declarationMap": false,             
+
     "noUncheckedIndexedAccess": true,   
     "exactOptionalPropertyTypes": true, 
-
-    // RECOMMENDED OPTIONS
     "isolatedModules": true,            
-    "skipLibCheck": true                 
+    "skipLibCheck": true,
+    
+    "types": [],
+    "typeRoots": ["./node_modules/@types"]
   },
 
-  // FILE INCLUSIONS
   "include": [
     "src/**/*.ts"                       
   ],
 
-  // FILE EXCLUSIONS
   "exclude": [
     "node_modules",                      
     "dist",                            
