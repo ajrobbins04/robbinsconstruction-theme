@@ -1,0 +1,23 @@
+@use "../design-tokens" as t;
+
+html, body {
+  font-family: t.$font-sans;
+  font-size: t.$font-size-base;
+  line-height: t.$line-height-base;
+  background: t.$color-bg;
+  color: t.$color-navy;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: t.$font-display;
+  font-weight: t.$fw-bold;
+}
+
+a {
+  color: t.$color-primary;
+  text-decoration: none;
+
+  &:hover {
+    color: t.$color-brown-700;
+  }
+}

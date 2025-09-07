@@ -1,5 +1,7 @@
 <?php
-?><!doctype html>
+?>
+<!-- DEBUG HEADER ROBBINS -->
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
@@ -9,5 +11,6 @@
 <body <?php body_class(); ?>>
 <header class="site-header">
   <h1>Robbins Construction</h1>
+  <nav><?php wp_nav_menu(["theme_location" => "primary"]); ?></nav>
 </header>
-<main id="app" class="app-root">
+

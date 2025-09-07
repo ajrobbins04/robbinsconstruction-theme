@@ -1,0 +1,11 @@
+/** 
+ * Z-index values for layering elements in the UI.
+ * These values help manage stacking context for various components.
+**/
+$z-negative: -1;   // elements that should be behind everything else
+$z-base: 0;        // default content
+$z-header: 100;    // sticky/fixed headers, nav
+$z-dropdown: 200;  // dropdown menus, tooltips
+$z-overlay: 300;   // darkened backdrop for modals
+$z-modal: 400;     // dialogs, lightboxes
+$z-toast: 500;     // notification banners
